@@ -107,6 +107,7 @@ public class DemoUI extends UI {
 				scrollBottomLabel.setValue(Integer.toString(event.getScrollData().getBottom()));
 				scrollWidthLabel.setValue(Integer.toString(event.getScrollWidth()));
 				scrollHeightLabel.setValue(Integer.toString(event.getScrollHeight()));
+				System.out.println(event);
 			}
 		});
 

@@ -3,6 +3,7 @@ package org.vaadin.addons.scrollablepanel;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.vaadin.addons.scrollablepanel.client.ScrollData;
 import org.vaadin.addons.scrollablepanel.client.ScrollablePanelServerRpc;
 import org.vaadin.addons.scrollablepanel.client.ScrollablePanelState;
@@ -27,7 +28,7 @@ public class ScrollablePanel extends AbstractSingleComponentContainer {
 	 * The client side fires the scroll change after a given delay when no
 	 * additional scroll event occurred.
 	 */
-	public static final int DEFAULT_SCROLL_EVENT_DELAY = 200;
+	public static final int DEFAULT_SCROLL_EVENT_DELAY = 10;
 
 	private ScrollData scrollData;
 
@@ -273,6 +274,11 @@ public class ScrollablePanel extends AbstractSingleComponentContainer {
 		 */
 		public ScrollData getScrollData() {
 			return scrollData;
+		}
+
+		@Override
+		public String toString() {
+			return ToStringBuilder.reflectionToString(this);
 		}
 	};
 
